@@ -58,7 +58,7 @@ USE_FPU = no
 #
 
 # set to one of the target boards below
-TARGET = CAN-USB-dongle-RevA
+TARGET = RobotDyn-BlackPill-F303CC
 
 # target boards
 ifeq ($(TARGET), nucleo)
@@ -69,6 +69,11 @@ endif
 ifeq ($(TARGET), CAN-USB-dongle-RevA)
 include src/board/CAN-USB-dongle/RevA/board.mk
 LDSCRIPT = rules/STM32F302x8.ld
+endif
+
+ifeq ($(TARGET), RobotDyn-BlackPill-F303CC)
+include src/board/RobotDyn-BlackPill-F303CC/board.mk
+LDSCRIPT = rules/STM32F303xC.ld
 endif
 
 # Define project name here
